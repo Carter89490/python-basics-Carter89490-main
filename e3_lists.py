@@ -1,47 +1,50 @@
 '''
-IndexOf: you should be able to determine the location of an item in a list
-Example:
-data = [1,2,3,5,6]
-calling the function like
-index_of(data, 3) should return the index 2
+index_of: should return the index of the first occurrence of the value in the list.
+Should raise ValueError if the value is not found.
 '''
-def index_of(data, item):
-    return data.index(item)
+def index_of(lst, value):
+    if value not in lst:
+        raise ValueError(f"{value} is not in list")
+    return lst.index(value)
 
 '''
-Sum: you should be able to sum the items of a list
-Example: data = [1,2,3]   =>  6
+sum_list: should return the sum of all numbers in the list.
 '''
-def sum_list(data):
-    return sum(data)
+def sum_list(lst):
+    return sum(lst)
 
 '''
-Filter: Should filter out all instances of a value from a list
-Example: filtering 2 out of [1,2,3,5,6,2,4,2] should return [1,3,5,6,4]
+filter_out: should return a new list with all occurrences of the value removed.
 '''
-def filter_out(data, item):
-    return [x for x in data if x != item]
-
-# Append: you should be able to add an item to the end of a list
-def append(data, item):
-    return data + [item]
+def filter_out(lst, value):
+    return [x for x in lst if x != value]
 
 '''
-Truncate: you should be able to remove the last item of a list
-hint: Use pop or slice to remove the last element of the list
+append: should return a new list with the value added to the end.
 '''
-def truncate(data):
-    return data[:-1]
+def append(lst, value):
+    return lst + [value]
 
 '''
-Concat: you should be able to join together two lists
+truncate: should return a new list with the last element removed.
 '''
-def concat(data1, data2):
-    return data1 + data2
+def truncate(lst):
+    return lst[:-1]
 
 '''
-Insert: you should be able to add an item at the specified index of a list
-hint: Use the insert() method
+concat: should return a new list combining both lists.
 '''
-def insert(data, item, index):
-    result = data.copy()
+def concat(lst1, lst2):
+    return lst1 + lst2
+
+'''
+insert: should return a new list with the value inserted at the given index.
+'''
+def insert(lst, value, index):
+    return lst[:index] + [value] + lst[index:]
+
+'''
+square: should return a new list with each value squared.
+'''
+def square(lst):
+    return [x ** 2 for x in lst]

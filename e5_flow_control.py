@@ -1,18 +1,18 @@
 '''
-  Write a function that receives a number as its argument;
-  if the number is divisible by 3, the function should return 'fizz'
-  if the number is divisible by 5, the function should return 'buzz'
-  if the number is divisible by 3 and 5, the function should return 'fizzbuzz'
-  if the value provided was a number but doesn't match any of those criteria, return the number as is.
-  if no number was provided or if the value provided wasn't a number, return False.
+fizz_buzz:
+  - return "fizz" if divisible by 3
+  - return "buzz" if divisible by 5
+  - return "fizzbuzz" if divisible by both 3 and 5
+  - return the number itself if not divisible by 3 or 5
+  - return False if the input is not a number
 '''
-def fizz_buzz(num=None):
-    if not isinstance(num, (int, float)) or isinstance(num, bool):
+def fizz_buzz(n):
+    if not isinstance(n, (int, float)):
         return False
-    if num % 15 == 0:
-        return 'fizzbuzz'
-    if num % 3 == 0:
-        return 'fizz'
-    if num % 5 == 0:
-        return 'buzz'
-    return num
+    if n % 15 == 0:
+        return "fizzbuzz"
+    if n % 3 == 0:
+        return "fizz"
+    if n % 5 == 0:
+        return "buzz"
+    return n
